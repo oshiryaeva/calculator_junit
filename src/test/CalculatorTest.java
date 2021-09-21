@@ -56,7 +56,7 @@ class CalculatorTest {
 
     // Here we skip the lines of incorrect XOR values in CSV file
     @ParameterizedTest
-    @CsvFileSource(resources = "data.csv", numLinesToSkip = 75, delimiter = '\u003B')
+    @CsvFileSource(resources = "data.csv", numLinesToSkip = 653, delimiter = '\u003B')
     void testXor(int a, int b, int add, int subtract, int multiply, int divide, int xor) {
         assertEquals(xor, calculator.calculateResult(a, b, OperationType.XOR));
     }
