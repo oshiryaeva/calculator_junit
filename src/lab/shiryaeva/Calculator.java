@@ -10,12 +10,13 @@ public class Calculator implements KeyListener {
 
     private static final String FIRST_NUMBER = "Please enter the first number: ";
     private static final String SECOND_NUMBER = "Please enter the second number: ";
+    private static final String BINARY_VALUE = "Binary value of %s is ";
     private static final String OPERATION = "Please enter an operation. Possible options:";
     private static final String OPERATION_OPTIONS = "[+] plus     \t  [-] minus       \t [*] times     \t [/] division      \t [^] xor";
     private static final String INVALID_INPUT = "Invalid input. Please reenter";
     private static final String ZERO_DIVISION_ERROR = "The second number is zero. You cannot divide by 0, please restart.";
     private static final String RESULT = "Result: ";
-    private static final String DECIMAL_RESULT = "Decimal result: ";
+    private static final String DECIMAL_RESULT = "Binary result: ";
     private static final String EXIT_MESSAGE = "Press Enter to try once again. Press ESC to exit";
     private static final String AGAIN_MESSAGE = "Oh, okay, here we go again";
     private static final String GOODBYE_MESSAGE = "Goodbye";
@@ -27,9 +28,11 @@ public class Calculator implements KeyListener {
 
             System.out.println(FIRST_NUMBER);
             int first_number = getInputNumber();
+            System.out.println(String.format( BINARY_VALUE, first_number) + decimalToBinary(first_number));
 
             System.out.println(SECOND_NUMBER);
             int second_number = getInputNumber();
+            System.out.println(String.format( BINARY_VALUE, second_number) + decimalToBinary(second_number));
 
             OperationType operation = getInputOperation();
 
